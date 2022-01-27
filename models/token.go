@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/go-oauth2/oauth2/v4"
+	"github.com/lixh00/oauth2/v4"
 )
 
 // NewToken create to token model instance
@@ -15,6 +15,7 @@ func NewToken() *Token {
 type Token struct {
 	ClientID            string        `bson:"ClientID"`
 	UserID              string        `bson:"UserID"`
+	UserInfo            string        `bson:"UserInfo"`
 	RedirectURI         string        `bson:"RedirectURI"`
 	Scope               string        `bson:"Scope"`
 	Code                string        `bson:"Code"`
@@ -53,6 +54,11 @@ func (t *Token) GetUserID() string {
 // SetUserID the user id
 func (t *Token) SetUserID(userID string) {
 	t.UserID = userID
+}
+
+// SetUserInfo set user info
+func (t *Token) SetUserInfo(userInfo string) {
+	t.UserInfo = userInfo
 }
 
 // GetRedirectURI redirect URI
