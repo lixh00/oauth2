@@ -61,6 +61,11 @@ func (t *Token) SetUserInfo(userInfo string) {
 	t.UserInfo = userInfo
 }
 
+// GetUserInfo get user info
+func (t *Token) GetUserInfo() string {
+	return t.UserInfo
+}
+
 // GetRedirectURI redirect URI
 func (t *Token) GetRedirectURI() string {
 	return t.RedirectURI
